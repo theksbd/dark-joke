@@ -1,7 +1,7 @@
 // https://v2.jokeapi.dev/joke/Dark?blacklistFlags=racist
 let joke;
 const apiURL =
-  "https://v2.jokeapi.dev/joke/Dark?blacklistFlags=nsfw,religious,political,racist,sexist,explicit";
+  "https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark?blacklistFlags=nsfw,religious,political,racist,sexist,explicit";
 
 const fetchData = (apiURL) => {
   fetch(apiURL)
@@ -12,6 +12,7 @@ const fetchData = (apiURL) => {
 
 const getJoke = () => {
   if (joke.type === "single") {
+    document.querySelector(".part-1").innerHTML = "";
     document.querySelector(".part-2").innerHTML = joke.joke;
   } else {
     document.querySelector(".part-1").innerHTML = joke.setup;
